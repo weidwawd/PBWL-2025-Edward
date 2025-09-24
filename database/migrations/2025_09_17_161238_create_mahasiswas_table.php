@@ -15,6 +15,19 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
         });
+        public function up(): void
+{
+        Schema::create('mahasiswas', function (Blueprint $table) {
+             $table->id(); // Field ke-1: ID
+             $table->string('nim', 10)->unique(); 
+             $table->string('nama', 100); 
+             $table->string('jurusan', 50); 
+             $table->integer('angkatan'); 
+             $table->string('email')->nullable(); 
+             $table->string('nomor_hp', 15)->nullable(); 
+             $table->timestamps(); 
+    });
+}
     }
 
     /**
